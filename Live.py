@@ -16,13 +16,13 @@ def load_game():
         print()
 
         # Player input choice
-        game_input = input("Your choise: ")
+        game_input = input("Your choice: ")
         print()
 
         # Check if the choice is correct
         try:
-            game_choice = int(game_input)
-            if game_choice >= 1 and game_choice <=3:
+            chosen_game = int(game_input)
+            if chosen_game >= 1 and chosen_game <=3:
                 break
             else:
                 print("Not exists!!!")
@@ -30,20 +30,19 @@ def load_game():
             print()
 
     # Next we print the game the player chose
-    if game_choice == 1:
+    if chosen_game == 1:
         print("Welcome to Memory Game")
-    elif game_choice == 2:
+    elif chosen_game == 2:
         print("Welcome to Guess Game")
     else:
         print("Welcome to Currency Roulette")
 
     # Now comes the game difficulty prompt
     while True:
-        print()
         difficulty_input = input("Choose a difficulty level from 1 to 5: ")
         try:
-            difficulty_choice = int(difficulty_input)
-            if difficulty_choice >=1 and difficulty_choice <= 5:
+            chosen_difficulty = int(difficulty_input)
+            if chosen_difficulty >=1 and chosen_difficulty <= 5:
                 break
             else:
                 print()
