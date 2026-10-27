@@ -60,7 +60,7 @@ def load_game(name):
     if chosen_game == 1:
         result = MemoryGame.play(chosen_difficulty)
         if result:
-            print("You won!")
+            print("Correct!")
         else:
-            print("You lost!")
+            print("Sorry. Try again!")
     return True

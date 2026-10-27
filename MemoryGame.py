@@ -13,6 +13,11 @@ def generate_sequence(difficulty):
     return sequence
 
 def show_sequence(sequence):
+    print("Get ready to remember the numbers...")
+    for seconds in range(3, 0, -1):
+        print(seconds)
+        time.sleep(1)
+    print()
     print("Remember these numbers:")
     number_as_text = []
     for number in sequence:
