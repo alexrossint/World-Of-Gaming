@@ -1,10 +1,12 @@
+import MemoryGame
+
 def welcome(name):
     return (
         "Hello " + name + " and welcome to the World of Games (WoG).\n"
         "Here you can find many cool games to play."
     )
 
-def load_game():
+def load_game(name):
     # Starting a loop
     while True:
         print()
@@ -13,6 +15,7 @@ def load_game():
         print("1. Memory Game: repeat a sequence of numbers shown for 0.7 seconds")
         print("2. Guess Game: guess the computer's secret number")
         print("3. Currency Roulette: estimate the ILS value of a random USD amount")
+        print("4. Exit")
         print()
 
         # Player input choice
@@ -22,7 +25,7 @@ def load_game():
         # Check if the choice is correct
         try:
             chosen_game = int(game_input)
-            if chosen_game >= 1 and chosen_game <=3:
+            if chosen_game >= 1 and chosen_game <=4:
                 break
             else:
                 print("Not exists!!!")
@@ -34,8 +37,13 @@ def load_game():
         print("Welcome to Memory Game")
     elif chosen_game == 2:
         print("Welcome to Guess Game")
-    else:
+    elif chosen_game == 3:
         print("Welcome to Currency Roulette")
+    else:
+        print()
+        print(f"Thank you {name} for playing! See you again!")
+        print()
+        return False
 
     # Now comes the game difficulty prompt
     while True:
@@ -48,3 +56,11 @@ def load_game():
                 print()
         except ValueError:
             print()
+
+    if chosen_game == 1:
+        result = MemoryGame.play(chosen_difficulty)
+        if result:
+            print("You won!")
+        else:
+            print("You lost!")
+    return True
